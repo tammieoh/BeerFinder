@@ -105,12 +105,21 @@ public class SecondActivity extends AppCompatActivity {
                     ArrayList<String> names_array = new ArrayList<>();
                     ArrayList<String> desc_array = new ArrayList<>();
                     ArrayList<String> images_array = new ArrayList<>();
+                    ArrayList<String> abv_array = new ArrayList<>();
+                    ArrayList<String> brewDate_array = new ArrayList<>();
+                    ArrayList<ArrayList<String>> foodPairs_array = new ArrayList<>();
+                    ArrayList<String> brewTips_array = new ArrayList<>();
 
                     Intent intent = new Intent(SecondActivity.this, ThirdActivity.class);
                     for(int i = 0; i < json.length(); i++) {
                         names_array.add(json.getJSONObject(i).getString("name"));
                         desc_array.add(json.getJSONObject(i).getString("description"));
                         images_array.add(json.getJSONObject(i).getString("image_url"));
+//                        abv_array.add(json.getJSONObject(i).getString("abv"));
+//                        brewDate_array.add(json.getJSONObject(i).getString("first_brewed"));
+//                        brewTips_array.add(json.getJSONObject(i).getString("brewers_tips"));
+//
+//                        for(int j = 0; j < )
                     }
                     intent.putExtra("names", names_array);
                     intent.putExtra("descs", desc_array);
