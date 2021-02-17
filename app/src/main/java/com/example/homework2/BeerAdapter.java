@@ -5,12 +5,14 @@ import android.content.Intent;
 import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.loopj.android.http.AsyncHttpClient;
@@ -73,6 +75,11 @@ public class BeerAdapter extends RecyclerView.Adapter<BeerAdapter.ViewHolder> {
         return beers.size();
     }
 
+    public void updateList(List<Beer> list){
+        beers = list;
+        notifyDataSetChanged();
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView textView_beerName;
         TextView textView_beerDesc;
@@ -112,6 +119,10 @@ public class BeerAdapter extends RecyclerView.Adapter<BeerAdapter.ViewHolder> {
             System.out.println(selectedBeer);
             intent.putExtra("beer", selectedBeer.getName());
             view.getContext().startActivity(intent);
+        }
+    }
+
+}
 
 //                client.addHeader("Accept", "application/json");
 //                // send a get request to the api url
@@ -158,7 +169,7 @@ public class BeerAdapter extends RecyclerView.Adapter<BeerAdapter.ViewHolder> {
 //            intent.putExtra("beer_tips", beer_tips);
 //            intent.putStringArrayListExtra("beer_FoodPairs", beer_foodPairs);
 
-        }}}
+
 
 
 //        public void launchNextActivity(String beer_name) {

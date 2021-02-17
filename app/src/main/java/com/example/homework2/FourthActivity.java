@@ -3,6 +3,8 @@ package com.example.homework2;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,6 +27,7 @@ public class FourthActivity extends AppCompatActivity {
     private String beer_name, foodPairs;
     private String base_url = "https://api.punkapi.com/v2/beers?";
     private static AsyncHttpClient client = new AsyncHttpClient();
+    private Button home_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,8 @@ public class FourthActivity extends AppCompatActivity {
         beer_brew = findViewById(R.id.brewDate_TextView);
         brew_tips = findViewById(R.id.brewTips_TextView);
         beer_foodPairs = findViewById(R.id.foodPair_TextView);
+
+        home_button = findViewById(R.id.home_button);
 
         foodPairs = "";
         Intent intent = getIntent();
@@ -81,8 +86,17 @@ public class FourthActivity extends AppCompatActivity {
                 Log.d("error getting params", base_url);
             }
         });
-
+        home_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                launchNextActivity(view);
+            }
+        });
 //        getInfo(beer_name);
+    }
+    public void launchNextActivity(View view) {
+        Intent intent = new Intent(FourthActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 
 //    public String getInfo(String beer_name) {

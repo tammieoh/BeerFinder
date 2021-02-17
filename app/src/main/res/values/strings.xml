@@ -9,4 +9,9 @@
     <string name="to_textView">to</string>
     <string name="highPoint_textView">High Point Beer?</string>
     <string name="results">We found %1$s results.</string>
+    <string name="toast_alert">Please follow the format: mm/yyyy</string>
+    <string name="date_error">Date order is incorrect.</string>
+    <string name="equal_dates">Dates are the same. Please remove one.</string>
+    <string name="search">Search beers..</string>
+    <string name="home_button">Home</string>
 </resources>
