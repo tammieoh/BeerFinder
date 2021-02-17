@@ -50,7 +50,7 @@
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:text="@string/brew_textView"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
 
             <EditText
                 android:id="@+id/startDate_editText"
@@ -61,7 +61,8 @@
                 android:ems="10"
                 android:gravity="center_horizontal"
                 android:hint="@string/date_editText"
-                android:inputType="date" />
+                android:inputType="date"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/to_textView"
@@ -70,7 +71,7 @@
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
                 android:text="@string/to_textView"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
 
             <EditText
                 android:id="@+id/endDate_editText"
@@ -81,7 +82,8 @@
                 android:ems="10"
                 android:gravity="center_horizontal"
                 android:hint="@string/date_editText"
-                android:inputType="date" />
+                android:inputType="date"
+                android:textSize="14sp" />
 
         </LinearLayout>
 
